@@ -1,4 +1,15 @@
-
+var player = "X";
+var end = false;
+var turns = 0;
+function performLogic(buttonId,tileId) {
+  $(buttonId).remove();
+  $(tileId).html(player);
+  if (player === "X") {
+    player = "O";
+  } else if (player != "X") {
+    player = "X";
+  }
+}
 
 
 
