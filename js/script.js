@@ -9,9 +9,18 @@ function performLogic(buttonId,tileId) {
   } else if (player != "X") {
     player = "X";
   }
+  winner($(tileId).val()
+  
+}
+function winner(one, two, three) {
+  if(one === player && two === player && three === player) {
+    $(".loser").html(player + "Wins");
+  }
 }
 
 
+
+// && $("#tile5").html() === "X" && $("#tile9").html() === "X")
 
 
 
