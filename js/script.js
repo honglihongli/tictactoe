@@ -4,17 +4,28 @@ var turns = 0;
 function performLogic(buttonId,tileId) {
   $(buttonId).remove();
   $(tileId).html(player);
+  winner($("#tile1").html(),$("#tile2").html(),$("#tile3").html());
+  winner($("#tile4").html(),$("#tile5").html(),$("#tile6").html());
+  winner($("#tile7").html(),$("#tile8").html(),$("#tile9").html());
+  winner($("#tile1").html(),$("#tile4").html(),$("#tile7").html());
+  winner($("#tile2").html(),$("#tile5").html(),$("#tile8").html());
+  winner($("#tile3").html(),$("#tile6").html(),$("#tile9").html());
+  winner($("#tile3").html(),$("#tile5").html(),$("#tile7").html());
+  winner($("#tile1").html(),$("#tile5").html(),$("#tile9").html());
   if (player === "X") {
     player = "O";
   } else if (player != "X") {
     player = "X";
   }
-  winner($(tileId).val()
-  
+  turns = turns+1;
+  if (turns===9) {
+    end===true;
+    $(".loser").html("It's a draw.");
+  }
 }
 function winner(one, two, three) {
   if(one === player && two === player && three === player) {
-    $(".loser").html(player + "Wins");
+    $(".loser").html(player + " Wins");
   }
 }
 
